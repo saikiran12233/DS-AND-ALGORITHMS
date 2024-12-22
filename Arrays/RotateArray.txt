@@ -1,0 +1,36 @@
+Rotate the array by k places
+
+practice link : https://leetcode.com/problems/rotate-array/
+
+Optimal Method : Reversing algorithm
+
+T.C : O(NlogN)
+S.C : O(N)   
+
+psuedo code :
+
+lass Solution {
+    public void rotate(int[] nums, int k) {
+        int n=nums.length;
+        int[] ans=new int[n];    //temp array for reversing 
+        int j=0;
+        if (n == 0)  return;
+        k = k % n;
+        if (k > n)  return;
+        for(int i=n-k;i<n;i++)
+        {
+            ans[j++]=nums[i];
+        }
+        for(int i=0;i<n-k;i++)
+        {
+            ans[j++]=nums[i];
+        }
+        for(int i=0;i<n;i++)    //transferring from temp to original array
+        {
+            nums[i]=ans[i];
+        }
+    }
+}
+
+
+=================================================================================

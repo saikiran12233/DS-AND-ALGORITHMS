@@ -1,0 +1,46 @@
+
+Largest Element in the array :
+
+practice link :https://www.geeksforgeeks.org/problems/largest-element-in-array4009/0?utm_source=youtube&utm_medium=collab_striver_ytdescription&utm_campaign=largest-element-in-array
+
+Brute Force Method : Using sorting approach ->
+
+Time Complexity : O(N*N);
+Space Complexity:O(1);
+
+psuedo code :
+
+class Solution {
+    public static int largest(int[] arr) {
+      
+      int n=arr.length;        //finding length of arraty
+      Arrays.sort(arr);        //sorting the array
+      return arr[n-1];         //returning last element in sorted array
+    }
+}
+
+-----------------------------------------------------------------------------
+
+Optimal Method : 
+
+TC : O(N)
+SC : O(1)
+
+psuedo code :
+
+class Solution {
+    public static int largest(int[] arr) {
+      
+      int n=arr.length;
+      
+      int max=arr[0];      
+      
+      for(int i=1;i<n;i++)
+      {
+          if(arr[i]>max) max=arr[i];
+      }
+      return max;
+    }
+}
+
+==================================================================================

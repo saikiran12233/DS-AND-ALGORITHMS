@@ -1,0 +1,26 @@
+Linear search - Finding if an element is present or not
+
+Practice Link :https://www.geeksforgeeks.org/problems/who-will-win-1587115621/1?utm_source=youtube&utm_medium=collab_striver_ytdescription&utm_campaign=who-will-win
+
+Optimal Method : 
+
+T.C : O(N)
+S.C : O(1)
+
+psuedo code :
+
+
+class Solution {
+    static boolean searchInSorted(int arr[], int k) {
+        int i;
+        for(i=0;i<arr.length;i++)
+        {
+            if(arr[i]==k) return true;
+        }
+        return false;
+    }
+}
+
+
+
+======================================================================================
