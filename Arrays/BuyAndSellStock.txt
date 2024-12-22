@@ -1,0 +1,34 @@
+Best Time to Buy and Sell a Stock
+
+practice link : https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/
+
+Optimal Method : 
+
+T.C : O(N)
+S.C : O(1)
+
+pseudo code 
+
+class Solution {
+    public int maxProfit(int[] prices) {
+        int n=prices.length;
+        int profit=prices[n-1];
+        int max=0;
+         for(int i=n-2;i>=0;i--)
+         {
+            if(prices[i]>profit){
+                profit=prices[i];
+            }
+            else{
+                if((profit-prices[i])>max)
+                {
+                    max=profit-prices[i];
+                }
+            }
+         }
+         return max;
+    }
+}
+
+
+=====================================================================

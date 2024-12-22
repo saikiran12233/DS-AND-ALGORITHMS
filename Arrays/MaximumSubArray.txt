@@ -1,0 +1,34 @@
+Maximum SubArray
+
+practice link : https://leetcode.com/problems/maximum-subarray/submissions/1485610393/
+
+Optimal Method : Kadane's Algorithm
+
+T.C : O(N)
+S.C : O(1)
+
+pseudo code 
+
+class Solution {
+    public int maxSubArray(int[] nums) {
+        
+        int sum=0;
+        int maxSum=Integer.MIN_VALUE;
+
+       for(int i=0;i<nums.length;i++)
+       {
+          sum+=nums[i];
+           if(sum>maxSum) maxSum=sum;
+       
+          if(sum<0)
+          {
+
+            sum=0;
+          }
+       }
+         
+        return maxSum;      
+    }
+   
+}
+    ========================================================================

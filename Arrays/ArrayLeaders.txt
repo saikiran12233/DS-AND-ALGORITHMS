@@ -1,0 +1,35 @@
+Array Leaders 
+
+practice link :https://www.geeksforgeeks.org/problems/leaders-in-an-array-1587115620/1?utm_source=youtube&utm_medium=collab_striver_ytdescription&utm_campaign=leaders-in-an-array
+
+Optimal Method :
+
+T.C : O(N)
+S.C : O(N)
+
+pseudo code 
+
+class Solution {
+    static ArrayList<Integer> leaders(int arr[]) {
+       
+       ArrayList<Integer> ans=new ArrayList<>();
+       
+       int n=arr.length;
+       int ele=arr[n-1];
+       ans.add(ele);
+       
+       for(int i=n-2;i>=0;i--)
+       {
+           if(arr[i]>=ele){
+               ele=arr[i];
+               ans.add(ele);
+           }
+       }
+       
+       Collections.reverse(ans);
+       
+       return ans;
+    }
+}
+
+========================================================================

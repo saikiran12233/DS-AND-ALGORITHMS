@@ -1,0 +1,21 @@
+Single Number 
+
+practice link : https://leetcode.com/problems/single-number/submissions/1485559290/
+
+Optimal Method :
+
+T.C : O(N)
+S.C : O(1)
+
+psuedo code 
+
+class Solution {
+    public int singleNumber(int[] nums) {
+         int i;
+         int xor=0;
+
+        for(i=0;i<nums.length;i++)
+          xor=xor ^ nums[i];
+         return xor;
+    }
+}

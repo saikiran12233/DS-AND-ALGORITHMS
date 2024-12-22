@@ -1,0 +1,27 @@
+Longest Consecutive sequence in array
+
+practice link :https://leetcode.com/problems/longest-consecutive-sequence/
+
+Optimal Method :
+
+class Solution {
+    public int longestConsecutive(int[] nums) {
+        if(nums.length==0) return 0;
+        int count=1;
+        int i;
+        int max=0;
+        Arrays.sort(nums);
+        for(i=0;i<nums.length-1;i++)
+        {
+            if(nums[i]==(nums[i+1]-1))
+            {
+            count++;
+            if(count>max) max=count;
+            }
+            else if(nums[i]==nums[i+1]) continue;
+            else count=1;
+        }
+        if(count>max) max=count;
+        return max;
+    }
+}
