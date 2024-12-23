@@ -1,0 +1,8 @@
+Rotate image (2D Matrix)
+
+practice link: 
+
+Optimal method :
+
+pseudo code
+
