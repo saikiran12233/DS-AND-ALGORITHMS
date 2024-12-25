@@ -1,0 +1,36 @@
+Count In Linked List
+
+Optimal method:
+
+pseudo code :
+
+   //Template code
+   Class Node{
+    int data;
+    Node next;
+ 
+    Node(int data)
+    {
+        this.data=data;
+        this.next=null;
+    }
+}
+
+
+class Solution {
+    // Function to count nodes of a linked list.
+
+    public int getCount(Node head) {
+       
+       Node temp=head;        //Do not alter the head
+       int count=0;      
+
+       while(temp!=null)
+       {
+        count++;
+        temp=temp.next;      //temp is marked to next element address
+       }
+       
+       return count;
+    }
+}

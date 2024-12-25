@@ -1,0 +1,93 @@
+package com.dsa.linkedlist_demo;
+
+//Node class
+class Node{
+	
+	int data;
+	Node next;
+	
+	Node(int head)
+	{
+		this.data=head;
+		this.next=null;
+	}
+	
+	public Node(int head, Node next) {
+		super();
+		this.data = head;
+		this.next = next;
+	}	
+}
+
+public class LinkedListDemo1 {
+
+	public static Node convertLinkedList(int[] arr)
+	{
+		//Always do not tamper the head
+		Node head=new Node(arr[0]);
+		
+		//mover is in the same as head address
+		//it is used to connect the next temp to head and move to temp
+		Node mover=head;
+		
+		//storing each element in the temp and linking each other
+		for(int i=1;i<arr.length;i++)
+		{
+			
+			Node temp=new Node(arr[i]);
+			mover.next=temp;
+			mover=temp;
+			
+		}
+		return head;
+		
+	}
+	
+	public static void printLinkedList(Node head)
+	{
+		//with head we can iterate through the linked list
+		Node temp=head;
+		
+		//To find the length of linked list
+		int count=0;
+		while(temp!=null)
+		{
+			System.out.print(temp.data+" ");
+			temp=temp.next;
+			count++;
+		}
+		
+		System.out.println("\nlength of linked list : "+count);
+	}
+	
+	public static boolean searchingElement(Node head,int key)
+	{
+		Node temp=head;
+		//Traversing through the entire linkedlist
+		while(temp!=null)
+		{
+			if(temp.data==key) return true;
+			temp=temp.next;
+		}
+		return false;
+		
+	}
+	public static void main(String[] args) {
+		
+		int[] arr= {3,6,2,6};   //array
+		
+		Node ans=convertLinkedList(arr);
+		
+		//System.out.println(ans.head);
+		
+		//Traversing the entire Linked list and finding the length
+		//of the linked list
+		printLinkedList(ans);
+		
+		
+		//Finding the key element in the Linked list
+		System.out.println(searchingElement(ans,10));
+		
+	}
+
+}
