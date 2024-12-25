@@ -1,0 +1,32 @@
+Search Insert Position
+
+Practice link :https://leetcode.com/problems/search-insert-position/submissions/1487735131/
+
+Optimal method :
+
+T.C : O(N)
+S.C : O(1)
+
+pseudo code :
+
+class Solution {
+    public int searchInsert(int[] nums, int target) {
+        int ans=nums.length;
+        int low=0;
+        int mid;
+        int high=nums.length-1;
+        while(low<=high)
+        {
+            mid=(low+high)/2;
+            if(nums[mid]>=target)
+            {
+                ans=mid;
+                high=mid-1;
+            }
+            else low=mid+1;
+        }
+        return ans;
+    }
+}
+
+========================================================================
